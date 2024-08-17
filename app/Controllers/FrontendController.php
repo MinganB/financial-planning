@@ -7,6 +7,12 @@ class FrontendController extends BaseController
     public function index()
     {
         $view = view('frontend/home');
-        return $this->getPreparedView($view);
+        return $this->getPreparedFrontendView($view);
+    }
+
+    public function attributions()
+    {
+        $view = view('legal/attributions');
+        return $this->getPreparedFrontendView($view);
     }
 }

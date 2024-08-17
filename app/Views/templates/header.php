@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= APP_NAME ?></title>
     <link href="<?= base_url('bootstrap5/css/bootstrap.min.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('css/global.css?v=0.0.1') ?>" rel="stylesheet">
+    <link href="<?= base_url('css/global.css?v=0.0.2') ?>" rel="stylesheet">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

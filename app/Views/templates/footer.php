@@ -1,6 +1,6 @@
 </main>
 
-<footer class="bg-light text-muted py-3">
+<footer class="bg-light text-muted py-5">
     <div class="container">
 
         <!-- Desktop Footer -->

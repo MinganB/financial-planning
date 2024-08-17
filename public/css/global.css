@@ -2,6 +2,10 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+main {
+    min-height: 70vh;
+}
+
 a {
     text-decoration: none;
 }

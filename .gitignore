@@ -1,3 +1,7 @@
+.env
+composer.json
+composer.lock
+
 #-------------------------
 # Operating Specific Junk Files
 #-------------------------

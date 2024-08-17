@@ -7,7 +7,7 @@
         <div class="d-none d-lg-flex justify-content-between align-items-center">
             <div>
                 <h5 class="mb-1"><?= APP_NAME ?></h5>
-                <p class="mb-0">Iconography courtesy of <a target="_blank" href="<?= base_url('attributions') ?>">Icons8</a>.</p>
+                <p class="mb-0">Iconography courtesy of <a target="_blank" href="<?= base_url('attributions') ?>">Icons8 and others</a>.</p>
             </div>
             <div class="flex-grow-1"></div> <!-- Empty middle column -->
             <div class="d-flex">
@@ -33,6 +33,7 @@
         <!-- Mobile Footer -->
         <div class="d-lg-none text-center">
             <p class="mb-0">&copy; 2024 <?= APP_NAME ?>. All rights reserved.</p>
+            <p class="mb-0">Iconography courtesy of <a target="_blank" href="<?= base_url('attributions') ?>">Icons8 and others</a>.</p>
         </div>
     </div>
 </footer>

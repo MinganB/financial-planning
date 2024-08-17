@@ -21,7 +21,30 @@
                             <strong><a href="https://icons8.com/" target="_blank">Icons8</a></strong>
                             <p class="mb-1">Icons used throughout the site. Assets used:</p>
                             <ul>
-                                <li><a target="_blank" href="https://icons8.com/icon/23352/enter-key">Enter Key</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/23352/enter-key">Enter Key</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/7Ego1HgHexLw/receive-cash">Income</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/GY0kDsfvlgPX/card-wallet">Card Wallet</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/4rk6CKNj6CB0/accounting">Budget</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/ZWJCMSKtvjqn/fund-accounting">Fund Accounting</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/daq62PiOqI4H/journal">Journal</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/ACi0kAlgSTlE/confetti">congratulations</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/Bvw1MpqGTPxI/workspace">Workspace</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>

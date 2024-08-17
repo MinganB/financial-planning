@@ -55,4 +55,16 @@ abstract class BaseController extends Controller
 
         // E.g.: $this->session = \Config\Services::session();
     }
+
+    /**
+     * Wraps a given view with the header and footer templates for the app.
+     *
+     * @return view The View to render.
+     */
+    public function getPreparedView($view)
+    {
+        return view('templates/header')
+            . $view
+            . view('templates/footer');
+    }
 }

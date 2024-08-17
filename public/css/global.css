@@ -1,0 +1,38 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hover-link {
+    transition: color 0.2s ease, transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth the transition for hover effects */
+    cursor: pointer; 
+}
+
+.hover-link:hover {
+    transform: scale(1.05);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.btn {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+}
+
+/* Error styling for input fields */
+.is-invalid {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
+/* Error message styling */
+#error-message {
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+}

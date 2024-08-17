@@ -23,6 +23,7 @@ defined('APP_NAMESPACE') || define('APP_NAMESPACE', 'App');
  | Constants used throughout the application.
  */
 defined('APP_NAME') || define('APP_NAME', 'Financial Planning App');
+defined('SUPPORT_EMAIL') || define('SUPPORT_EMAIL', 'appsupport@financial-planning.co.za');
 
 /*
  | --------------------------------------------------------------------------

@@ -72,6 +72,6 @@ abstract class BaseController extends Controller
     {
         return view('frontend/header')
             . $view
-            . view('frontend/footer');
+            . view('templates/footer');
     }
 }

@@ -7,7 +7,7 @@
         <div class="d-none d-lg-flex justify-content-between align-items-center">
             <div>
                 <h5 class="mb-1"><?= APP_NAME ?></h5>
-                <p class="mb-0">Iconography courtesy of <a href="#">Icons8</a>.</p>
+                <p class="mb-0">Iconography courtesy of <a target="_blank" href="<?= base_url('attributions') ?>">Icons8</a>.</p>
             </div>
             <div class="flex-grow-1"></div> <!-- Empty middle column -->
             <div class="d-flex">

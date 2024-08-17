@@ -12,4 +12,13 @@ class OnboardingController extends BaseController
         $view = view('onboarding/welcome');
         return $this->getPreparedView($view);
     }
+
+    /**
+     * Allows users to enter / update their data.
+     */
+    public function update()
+    {
+        $view = view('onboarding/datacapture');
+        return $this->getPreparedView($view);
+    }
 }

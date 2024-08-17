@@ -25,6 +25,16 @@
                             </ul>
                         </li>
                     </ul>
+
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong><a href="https://icons8.com/" target="_blank">Freepik</a></strong>
+                            <p class="mb-1">Illustrations used throughout the site. Assets used:</p>
+                            <ul>
+                                <li><a target="_blank" href="https://www.freepik.com/free-vector/onboarding-concept-illustration_8385584.htm#fromView=search&page=1&position=8&uuid=2d9e6111-f0f5-4448-ae0d-a5c145d8a3c4">Onboarding concept illustration</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ class OnboardingController extends BaseController
     public function index()
     {
         $view = view('onboarding/welcome');
-        return $this->getPreparedView($view);
+        return $this->getPreparedView($view, false, false);
     }
 
     /**
@@ -19,6 +19,6 @@ class OnboardingController extends BaseController
     public function update()
     {
         $view = view('onboarding/datacapture');
-        return $this->getPreparedView($view);
+        return $this->getPreparedView($view, false, false);
     }
 }

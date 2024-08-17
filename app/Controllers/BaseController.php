@@ -61,17 +61,33 @@ abstract class BaseController extends Controller
      *
      * @return view The View to render.
      */
-    public function getPreparedView($view)
+    public function getPreparedView($view, $showNavbar = true, $showFooter = true)
     {
-        return view('templates/header')
-            . $view
-            . view('templates/footer');
+        $header = view('templates/header');
+        $footer = view('templates/footer');
+        $noFooter = view('templates/no-footer');
+
+        if ($showNavbar)
+            $header .=  view('templates/navbar');
+        else
+            $header .=  view('templates/no-navbar');
+        $view = $header . $view;
+
+        if ($showFooter)
+            $view .= $footer;
+        else
+            $view .= $noFooter;
+
+        return $view;
     }
 
     public function getPreparedFrontendView($view)
     {
-        return view('frontend/header')
-            . $view
-            . view('templates/footer');
+        $header = view('frontend/header');
+        $footer = view('templates/footer');
+
+        $view = $header . $view . $footer;
+
+        return $view;
     }
 }

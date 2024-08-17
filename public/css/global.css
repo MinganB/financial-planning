@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn {
     font-family: "Inter", sans-serif;
-    font-weight: 500;
+    font-weight: 200;
 }
 
 /* Error styling for input fields */
@@ -43,4 +43,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .min-height-80 {
     min-height: 80vh;
+}
+
+.icon-18 {
+    width: 18px;
+}
+
+@media (max-width: 768px) {
+    .mobile-hidden { 
+        display: none;
+    }
 }

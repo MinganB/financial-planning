@@ -23,13 +23,13 @@
             <!-- Desktop Header -->
             <div class="d-none d-lg-flex align-items-center w-100">
                 <div class="me-auto">
-                    <h3 class="m-0"><?= APP_NAME ?></h3>
+                    <h3 class="m-0"><a class="logo-text" href="<?= base_url('') ?>"><?= APP_NAME ?></a></h3>
                 </div>
                 <nav>
                     <ul class="nav">
-                        <li class="nav-item"><a href="#" class="nav-link hover-link">Home</a></li>
+                        <li class="nav-item"><a href="<?= base_url('') ?>" class="nav-link hover-link">Home</a></li>
                         <li class="nav-item"><a href="#" class="nav-link hover-link">Learn more</a></li>
-                        <li class="nav-item"><button class="btn btn-outline-primary">Log in</button></li>
+                        <li class="nav-item"><a href="<?= base_url('me') ?>" class="btn btn-outline-primary">Log in</a></li>
                     </ul>
                 </nav>
             </div>

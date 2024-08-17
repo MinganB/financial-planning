@@ -21,7 +21,7 @@
                             <strong><a href="https://icons8.com/" target="_blank">Icons8</a></strong>
                             <p class="mb-1">Icons used throughout the site. Assets used:</p>
                             <ul>
-                                <li>hhh</li>
+                                <li><a target="_blank" href="https://icons8.com/icon/23352/enter-key">Enter Key</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></li>
                             </ul>
                         </li>
                     </ul>

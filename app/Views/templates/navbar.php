@@ -37,7 +37,7 @@
         </div>
         <div class="offcanvas-body">
             <ul class="nav flex-column">
-                <li class="nav-item"><a href="#" class="nav-link">Dashboard</a></li>
+                <li class="nav-item"><a href="<?= base_url('me') ?>" class="nav-link">Dashboard</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">My budget</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">My net worth</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Financial planning</a></li>

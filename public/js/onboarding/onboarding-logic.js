@@ -56,6 +56,7 @@ function displayCurrentQuestion() {
   else skipBtn.style.visibility = "visible";
 
   updateProgressBar();
+  document.getElementById("answer").focus();
 }
 
 /**

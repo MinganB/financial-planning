@@ -22,5 +22,6 @@ $routes->get('me', 'DashboardController::index');
  */
 $routes->get('me/onboarding', 'OnboardingController::index');
 $routes->get('me/onboarding/update', 'OnboardingController::update');
+$routes->get('me/onboarding/complete', 'OnboardingController::complete');
 
 service('auth')->routes($routes);

@@ -21,4 +21,13 @@ class OnboardingController extends BaseController
         $view = view('onboarding/datacapture');
         return $this->getPreparedView($view, false, false);
     }
+
+    /**
+     * User has completed the onboarding process. Shows them a confirmation screen.
+     */
+    public function complete()
+    {
+        $view = view('onboarding/complete');
+        return $this->getPreparedView($view, false, false);
+    }
 }

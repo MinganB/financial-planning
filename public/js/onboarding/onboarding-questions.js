@@ -273,7 +273,7 @@ const onboardingQuestions = [
     question: "What is your house number?",
     subtitle: "Enter your street address number.",
     placeholder: "House number",
-    required: true,
+    required: false,
     constraints: {
       min: 1,
       max: 999999,
@@ -420,9 +420,9 @@ const onboardingQuestions = [
   {
     id: 28,
     type: "select",
-    question: "Do you have any income other than a salary?",
+    question: "Do you earn income besides a salary?",
     subtitle:
-      "Other incomes may include rental income, investment income, or income from a side-business.",
+      "Any non-employment income including rental income, investment income, or income from a side-business.",
     options: ["Yes", "No"],
     required: true,
   },

@@ -102,7 +102,15 @@ function nextQuestion() {
       // TODO: Send data to server
       alert("Onboarding complete!"); // Finish onboarding process
       console.log(onboardingQuestions); // Output the answers for now
-      return;
+
+      let success = true;
+
+      if (!success) {
+        // TODO: Show an error message
+        return;
+      }
+
+      window.location.href = base_url + "me/onboarding/complete";
     }
 
     // Conditional questions

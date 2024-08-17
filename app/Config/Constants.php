@@ -16,6 +16,15 @@
 defined('APP_NAMESPACE') || define('APP_NAMESPACE', 'App');
 
 /*
+ | --------------------------------------------------------------------
+ | App specific constants
+ | --------------------------------------------------------------------
+ |
+ | Constants used throughout the application.
+ */
+defined('APP_NAME') || define('APP_NAME', 'Financial Planning App');
+
+/*
  | --------------------------------------------------------------------------
  | Composer Path
  | --------------------------------------------------------------------------

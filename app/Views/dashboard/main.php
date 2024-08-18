@@ -31,23 +31,21 @@
 <div class="container mt-4">
     <h3 class="mb-4">Welcome back, John</h3>
 
-    <!-- Dashboard Cards -->
+    <!-- Cards -->
     <div id="dashboardCards" class="row mb-5 g-2">
     </div>
 
-    <!-- Actions heading -->
-    <h4 class="my-4">What would you like to do?</h4>
-
     <!-- Actions grid -->
+    <h4 class="my-4">What would you like to do?</h4>
     <div class="row g-3 mt-3">
-        <div class="col-4 col-lg-2 text-center action-icon-div">
+        <a class="col-4 col-lg-2 text-center action-icon-div" data-bs-toggle="modal" data-bs-target="#incomeModal">
             <img src="<?= base_url('img/icons8-income-94.png') ?>" alt="Add Income" class="img-fluid action-icon">
             <p class="mt-2 fw-light">Log Income</p>
-        </div>
-        <div class="col-4 col-lg-2 text-center action-icon-div">
+        </a>
+        <a class="col-4 col-lg-2 text-center action-icon-div" data-bs-toggle="modal" data-bs-target="#expenseModal">
             <img src="<?= base_url('img/icons8-card-wallet-94.png') ?>" alt="Add Expense" class="img-fluid action-icon">
             <p class="mt-2 fw-light">Log Expense</p>
-        </div>
+        </a>
         <a href="<?= base_url('me/budget') ?>" class="col-4 col-lg-2 text-center action-icon-div">
             <img src="<?= base_url('img/icons8-budget-94.png') ?>" alt="Budget" class="img-fluid action-icon">
             <p class="mt-2 fw-light">View Budget</p>

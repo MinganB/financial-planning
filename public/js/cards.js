@@ -2,8 +2,9 @@ function populateCards(cards) {
   const dashboardCardsContainer = document.getElementById("dashboardCards");
 
   cards.forEach((card) => {
-    const colDiv = document.createElement("div");
-    colDiv.className = "col-6 col-lg-3 d-flex";
+    const colDiv = document.createElement("a");
+    colDiv.className = "col-6 col-lg-3 d-flex no-decoration";
+    colDiv.href = card.href;
 
     const cardDiv = document.createElement("div");
     cardDiv.className = "card p-3 flex-fill";

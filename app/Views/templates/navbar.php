@@ -9,8 +9,8 @@
                 </div>
                 <nav>
                     <ul class="nav">
-                        <li class="nav-item"><a href="#" class="nav-link hover-link">Dashboard</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link hover-link">Settings</a></li>
+                        <li class="nav-item"><a href="<?= base_url('me') ?>" class="nav-link hover-link">Dashboard</a></li>
+                        <li class="nav-item"><a href="<?= base_url('me/settings') ?>" class="nav-link hover-link">Settings</a></li>
                         <li class="nav-item"><a href="#" class="nav-link hover-link">Log out</a></li>
                     </ul>
                 </nav>
@@ -38,11 +38,11 @@
         <div class="offcanvas-body">
             <ul class="nav flex-column">
                 <li class="nav-item"><a href="<?= base_url('me') ?>" class="nav-link">Dashboard</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">My budget</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">My net worth</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Financial planning</a></li>
+                <li class="nav-item"><a href="<?= base_url('me/budget') ?>" class="nav-link">My budget</a></li>
+                <li class="nav-item"><a href="<?= base_url('me/net-worth') ?>" class="nav-link">My net worth</a></li>
+                <li class="nav-item"><a href="<?= base_url('me/planning') ?>" class="nav-link">Financial planning</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">My profile</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">App settings</a></li>
+                <li class="nav-item"><a href="<?= base_url('me/settings') ?>" class="nav-link">App settings</a></li>
             </ul>
         </div>
     </div>

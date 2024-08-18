@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= APP_NAME ?></title>
     <link href="<?= base_url('bootstrap5/css/bootstrap.min.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('css/global.css?v=0.0.2') ?>" rel="stylesheet">
+    <link href="<?= base_url('css/global.css?v=0.0.4') ?>" rel="stylesheet">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
                 <nav>
                     <ul class="nav">
                         <li class="nav-item"><a href="<?= base_url('') ?>" class="nav-link hover-link">Home</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link hover-link">Learn more</a></li>
+                        <li class="nav-item"><a href="<?= base_url('about') ?>" class="nav-link hover-link">Learn more</a></li>
                         <li class="nav-item"><a href="<?= base_url('me') ?>" class="btn btn-outline-primary">Log in</a></li>
                     </ul>
                 </nav>

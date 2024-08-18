@@ -14,17 +14,17 @@
                 <div class="me-5">
                     <h6 class="my-3">Quick Links</h6>
                     <ul class="list-unstyled">
-                        <li class="my-3 hover-link"><a href="#" class="text-muted">Home</a></li>
-                        <li class="my-3 hover-link"><a href="#" class="text-muted">About</a></li>
-                        <li class="my-3 hover-link"><a href="#" class="text-muted">Get in touch</a></li>
+                        <li class="my-3 hover-link"><a href="<?= base_url('') ?>" class="text-muted">Home</a></li>
+                        <li class="my-3 hover-link"><a href="<?= base_url('about') ?>" class="text-muted">About</a></li>
+                        <li class="my-3 hover-link"><a href="<?= base_url('contact') ?>" class="text-muted">Get in touch</a></li>
                     </ul>
                 </div>
                 <div class="mx-5">
                     <h6 class="my-3">Legal</h6>
                     <ul class="list-unstyled">
-                        <li class="my-3 hover-link"><a href="#" class="text-muted">Privacy policy</a></li>
-                        <li class="my-3 hover-link"><a href="#" class="text-muted">Terms of service</a></li>
-                        <li class="my-3 hover-link"><a href="#" class="text-muted">POPIA compliance</a></li>
+                        <li class="my-3 hover-link"><a href="<?= base_url('privacy-policy') ?>" class="text-muted">Privacy policy</a></li>
+                        <li class="my-3 hover-link"><a href="<?= base_url('terms-of-service') ?>" class="text-muted">Terms of service</a></li>
+                        <li class="my-3 hover-link"><a href="<?= base_url('popia-policy') ?>" class="text-muted">POPIA compliance</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,0 +1,18 @@
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-group-item .remove-button {
+    color: #dc3545;
+    cursor: pointer;
+}
+
+#deleteAccountLink {
+    font-weight: bold;
+}
+
+.settings-container {
+    max-width: 600px;
+}

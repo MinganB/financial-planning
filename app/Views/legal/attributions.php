@@ -45,6 +45,24 @@
                                 <li>
                                     <a target="_blank" href="https://icons8.com/icon/Bvw1MpqGTPxI/workspace">Workspace</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
                                 </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/iJzm3AFQCS4W/home">Home</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/Uo8TjLaZh0NZ/road">Road</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/cMXHz3haUy1l/noodles">Noodles</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/LDJEYUKP60k9/carousel">Carousel</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/FUDzLr8mluPd/conflict">Electricity</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/wCClDpWTvma9/receipt">Receipt</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>

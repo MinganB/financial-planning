@@ -1,0 +1,46 @@
+.fab-container {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#fab-add-new {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.fab-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+}
+
+.fab-menu button {
+    width: 140px;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+    border-radius: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 576px) {
+    .fab-container {
+        display: block;
+    }
+    .modal-dialog {
+        margin: 1rem;
+    }
+}

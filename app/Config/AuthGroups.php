@@ -49,17 +49,17 @@ class AuthGroups extends ShieldAuthGroups
             'title'       => 'Admin',
             'description' => 'Day to day administrators of the site.',
         ],
-        'developer' => [
-            'title'       => 'Developer',
-            'description' => 'Site programmers.',
-        ],
         'user' => [
             'title'       => 'User',
-            'description' => 'General users of the site. Often customers.',
+            'description' => 'General users of the site. Clients using general app features.',
         ],
-        'beta' => [
-            'title'       => 'Beta User',
-            'description' => 'Has access to beta-level features.',
+        'adviser' => [
+            'title'       => 'Financial adviser',
+            'description' => 'Financial advisers able to view and request client information.',
+        ],
+        'service' => [
+            'title'       => 'Third-party service',
+            'description' => 'Third party services able to interact with API endpoints.',
         ],
     ];
 
@@ -102,16 +102,8 @@ class AuthGroups extends ShieldAuthGroups
             'users.delete',
             'beta.access',
         ],
-        'developer' => [
-            'admin.access',
-            'admin.settings',
-            'users.create',
-            'users.edit',
-            'beta.access',
-        ],
         'user' => [],
-        'beta' => [
-            'beta.access',
-        ],
+        'adviser' => [],
+        'service' => [],
     ];
 }

@@ -15,4 +15,9 @@ class FrontendController extends BaseController
         $view = view('legal/attributions');
         return $this->getPreparedFrontendView($view);
     }
+
+    public function about() {
+        $view = view('about/main');
+        return $this->getPreparedFrontendView($view);
+    }
 }

@@ -11,6 +11,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'FrontendController::index');
 $routes->get('/attributions', 'FrontendController::attributions');
+$routes->get('/about', 'FrontendController::about');
 
 /**
  * Dashboard routes

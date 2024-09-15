@@ -33,7 +33,7 @@
             <label for="confirmPassword" class="form-label">Confirm Password</label>
             <input type="password" class="form-control" id="confirmPassword">
         </div>
-        <button id="updatePasswordButton" class="btn btn-primary">Update Password</button>
+        <button id="updatePasswordButton" class="btn btn-dark">Update Password</button>
     </section>
 
     <hr class="my-4">
@@ -65,7 +65,7 @@
                 <option value="private">Just me</option>
             </select>
         </div>
-        <button id="updatePrivacyButton" class="btn btn-primary">Update Settings</button>
+        <button id="updatePrivacyButton" class="btn btn-dark">Update Settings</button>
     </section>
 
     <hr class="my-4">
@@ -76,7 +76,7 @@
         <ul id="sharedAccessList" class="list-group mb-3">
             <!-- List of shared users -->
         </ul>
-        <button id="inviteSomeoneButton" class="btn btn-secondary btn-sm">+ Invite someone</button>
+        <button id="inviteSomeoneButton" class="btn btn-dark btn-sm">+ Invite someone</button>
     </section>
 
     <hr class="my-4">

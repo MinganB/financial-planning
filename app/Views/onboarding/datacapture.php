@@ -19,5 +19,5 @@
     </div>
 </div>
 
-<script src="<?= base_url('js/onboarding/onboarding-questions.js?v=0.0.1') ?>"></script>
-<script src="<?= base_url('js/onboarding/onboarding-logic.js?v=0.0.2') ?>"></script>
+<script src="<?= base_url('js/onboarding/onboarding-questions.js?v=0.0.6') ?>"></script>
+<script src="<?= base_url('js/onboarding/onboarding-logic.js?v=0.0.6') ?>"></script>

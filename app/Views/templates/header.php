@@ -18,3 +18,6 @@
 <script>
     const base_url = '<?= base_url('') ?>'; // For global availability in JS scripts
 </script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="<?= base_url('js/global.js?v=0.0.5') ?>"></script>

@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use App\Filters\OnboardingFilter;
 use CodeIgniter\Config\Filters as BaseFilters;
 use CodeIgniter\Filters\Cors;
 use CodeIgniter\Filters\CSRF;
@@ -36,6 +37,7 @@ class Filters extends BaseFilters
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
         'session'   => SessionAuth::class,
+        'onboarding'   => OnboardingFilter::class,
     ];
 
     /**
@@ -106,6 +108,7 @@ class Filters extends BaseFilters
      * @var array<string, array<string, list<string>>>
      */
     public array $filters = [
-        'session' => ['before' => ['me/*', 'me']]
+        'session' => ['before' => ['me/*', 'me', 'onboarding/*', 'onboarding']],
+        'onboarding' => ['before' => ['me/*', 'me']],
     ];
 }

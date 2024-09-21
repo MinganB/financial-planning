@@ -64,53 +64,74 @@ function displayCurrentQuestion() {
  */
 function nextQuestion() {
   const answerElement = document.getElementById("answer");
-  const answer = answerElement.value;
   const questionData = onboardingQuestions[currentQuestionIndex];
   const errorMessageElement = document.getElementById("error-message");
+  const answer = answerElement.value;
 
-  // Reset error state
-  errorMessageElement.innerText = "";
-  answerElement.classList.remove("is-invalid");
+  if(questionData) {
+    // Reset error state
+    errorMessageElement.innerText = "";
+    answerElement.classList.remove("is-invalid");
 
-  // Check required fields and constraints
-  if (questionData.required && !answer) {
-    errorMessageElement.innerText = "This field is required.";
-    answerElement.classList.add("is-invalid");
-    return;
-  }
-
-  if (questionData.type === "number") {
-    const numericAnswer = parseFloat(answer);
-    if (
-      numericAnswer < questionData.constraints.min ||
-      numericAnswer > questionData.constraints.max
-    ) {
-      errorMessageElement.innerText = `Please enter a value between ${questionData.constraints.min} and ${questionData.constraints.max}.`;
+    // Check required fields and constraints
+    if (questionData.required && !answer) {
+      errorMessageElement.innerText = "This field is required.";
       answerElement.classList.add("is-invalid");
       return;
     }
-  }
 
-  // Save answer
-  onboardingQuestions[currentQuestionIndex].answer = answer;
+    if (questionData.type === "number") {
+      const numericAnswer = parseFloat(answer);
+      if (
+        numericAnswer < questionData.constraints.min ||
+        numericAnswer > questionData.constraints.max
+      ) {
+        errorMessageElement.innerText = `Please enter a value between ${questionData.constraints.min} and ${questionData.constraints.max}.`;
+        answerElement.classList.add("is-invalid");
+        return;
+      }
+    }
+
+    // Save answer
+    onboardingQuestions[currentQuestionIndex].answer = answer;
+  }
 
   do {
     currentQuestionIndex++;
 
     // Confirm if at the end of the questions
     if (currentQuestionIndex >= onboardingQuestions.length) {
-      // TODO: Send data to server
-      alert("Onboarding complete!"); // Finish onboarding process
-      console.log(onboardingQuestions); // Output the answers for now
-
-      let success = true;
-
-      if (!success) {
-        // TODO: Show an error message
-        return;
+      function getSelectedOptionIndex(options, selectedValue) {
+        return options.indexOf(selectedValue); // Get the index of the selected value
       }
+      
+      // Build the payload
+      let payload = onboardingQuestions.map(arg => {
+          let answer;
+      
+          // Check if the question is of type 'select'
+          if (arg.type === 'select') {
+              // Get the index of the selected option from the options array
+              answer = getSelectedOptionIndex(arg.options, arg.answer);
+          } else {
+              // For non-select types (like text), just use the answer directly
+              answer = arg.answer;
+          }
+      
+          return {
+              id: arg.id,
+              type: arg.type,
+              answer: answer // Store the index (for select) or the value (for text/number)
+          };
+      });
 
-      window.location.href = base_url + "me/onboarding/complete";
+      makeAjaxCall('onboarding/submit', payload, function(response) {
+        console.log(response);
+
+        // window.location.href = base_url + "onboarding/complete";
+      });
+
+      return;
     }
 
     // Conditional questions

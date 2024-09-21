@@ -21,9 +21,10 @@ $routes->get('me', 'DashboardController::index');
 /**
  * Onboarding routes
  */
-$routes->get('me/onboarding', 'OnboardingController::index');
-$routes->get('me/onboarding/update', 'OnboardingController::update');
-$routes->get('me/onboarding/complete', 'OnboardingController::complete');
+$routes->get('onboarding', 'OnboardingController::index');
+$routes->get('onboarding/update', 'OnboardingController::update');
+$routes->get('onboarding/complete', 'OnboardingController::complete');
+$routes->post('onboarding/submit', 'OnboardingController::submit');
 
 /**
  * Settings routes

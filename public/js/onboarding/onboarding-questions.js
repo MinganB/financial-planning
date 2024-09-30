@@ -384,7 +384,7 @@ const onboardingQuestions = [
     },
   },
   {
-    id: 26,
+    id: 26, //todo
     type: "number",
     question: "What is your gross monthly income?",
     subtitle:
@@ -401,7 +401,7 @@ const onboardingQuestions = [
     },
   },
   {
-    id: 27,
+    id: 27, //todo
     type: "number",
     question: "What is your net monthly income?",
     subtitle:
@@ -427,7 +427,7 @@ const onboardingQuestions = [
     required: true,
   },
   {
-    id: 29,
+    id: 29, //todo
     type: "number",
     question: "What is your total other income?",
     subtitle: "Your total income from sources other than your full-time job.",
@@ -618,7 +618,7 @@ const onboardingQuestions = [
     required: true,
   },
   {
-    id: 43,
+    id: 43, //todo
     type: "number",
     question: "How much did you purchase the property for?",
     subtitle: "The original purchase price or bond amount.",
@@ -634,7 +634,7 @@ const onboardingQuestions = [
     },
   },
   {
-    id: 44,
+    id: 44, //todo
     type: "number",
     question: "What is the current market value of your home?",
     subtitle: "Enter the amount you could sell your house for.",
@@ -650,7 +650,7 @@ const onboardingQuestions = [
     },
   },
   {
-    id: 45,
+    id: 45, //todo
     type: "number",
     question: "What is the outstanding bond on your home?",
     subtitle: "Enter the amount you still owe on the bond.",
@@ -666,7 +666,7 @@ const onboardingQuestions = [
     },
   },
   {
-    id: 46,
+    id: 46, 
     type: "select",
     question: "Do you own a motor vehicle?",
     subtitle: "Indicate if you own a car.",
@@ -674,7 +674,7 @@ const onboardingQuestions = [
     required: true,
   },
   {
-    id: 47,
+    id: 47, //todo
     type: "number",
     question: "How much did you purchase the vehicle for?",
     subtitle: "The original purchase price or finance amount.",
@@ -690,7 +690,7 @@ const onboardingQuestions = [
     },
   },
   {
-    id: 48,
+    id: 48, //todo
     type: "number",
     question: "What is the current market value of your vehicle?",
     subtitle:
@@ -707,7 +707,7 @@ const onboardingQuestions = [
     },
   },
   {
-    id: 49,
+    id: 49, //todo
     type: "number",
     question: "What is the outstanding finance amount on your car?",
     subtitle: "Enter the amount you still owe on your vehicle.",
@@ -732,7 +732,7 @@ const onboardingQuestions = [
     required: true,
   },
   {
-    id: 51,
+    id: 51, //todo
     type: "number",
     question: "What is the outstanding amount on your credit card?",
     subtitle: "Enter the amount you current owe on your credit card.",
@@ -748,7 +748,7 @@ const onboardingQuestions = [
     },
   },
   {
-    id: 52,
+    id: 52, //todo
     type: "number",
     question: "What is the total balance on your personal loans?",
     subtitle:

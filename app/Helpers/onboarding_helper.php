@@ -4,7 +4,10 @@ if (!function_exists('getUserDetailsFields')) {
     function getUserDetailsFields() {
         return [
             5 => 'title',
+            6 => 'marital_status',
             7 => 'marital_regime',
+            33 => 'tax_id',
+            41 => 'children_amnt',
             53 => 'nationality',
         ];
     }
@@ -17,6 +20,7 @@ if (!function_exists('getUserDataFields')) {
             2 => 'full_name',
             3 => 'last_name',
             4 => 'initials',
+            8 => 'prev_surname',
             11 => 'home_3',
             12 => 'city',
             13 => 'home_2',
@@ -43,6 +47,7 @@ if (!function_exists('getAnniversaryFields')) {
 if (!function_exists('getUserEmploymentFields')) {
     function getUserEmploymentFields() {
         return [
+            20 => 'employment_status',
             21 => 'employer',
             22 => 'job_title',
             23 => 'employer_since',
@@ -62,6 +67,7 @@ if (!function_exists('getUserUnderwritingFields')) {
             35 => 'smoker_status',
             36 => 'is_drinker',
             37 => 'alcohol_usage',
+            39 => 'qualification',
         ];
     }
 }

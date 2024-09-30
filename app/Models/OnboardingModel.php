@@ -139,6 +139,8 @@ class OnboardingModel extends Model
             'language',
             'gender',
             'marital_regime',
+            'marital_status',
+            'children_amnt',
             'home_no',
             'work_no',
             'other_no'
@@ -170,6 +172,7 @@ class OnboardingModel extends Model
             'doctor_name',
             'doctor_practice',
             'doctor_phone',
+            'qualification'
         ];
 
         helper('database');
@@ -192,6 +195,7 @@ class OnboardingModel extends Model
             'last_name',
             'nick_name',
             'initials',
+            'prev_surname',
             'id_number',
             'dob',
             'cell_no',
@@ -223,6 +227,7 @@ class OnboardingModel extends Model
     private function update_user_employment($userId, $data)
     {
         $allowedFields = [
+            'employment_status',
             'employer',
             'industry',
             'industry_since',

@@ -47,12 +47,27 @@ class OnboardingController extends BaseController
     {
         $user = auth()->user();
 
-        if ($user) {
-            $userModel = new UserModel();
-            $userModel->update($user->id, ['onboarding_completed' => true]);
+        if(!$user) {
+            log_message('error', 'Onboarding completion error: User id not found');
+            return redirect()->to('onboarding/update'); // TODO: Take th user to an error page instead
+        }
 
-            // Update user object in the session
-            auth()->user()->onboarding_completed = true;
+        $db = \Config\Database::connect();
+        $builder = $db->table('onboarding');
+        
+        $onboardingData = $builder->where('user_id', $user->id)->get()->getRow();
+
+        if ($onboardingData) {
+            // Update the timestamp
+            $builder->where('user_id', $user->id)->update([
+                'completed_at' => date('Y-m-d H:i:s')
+            ]);
+        } else {
+            // Mark the user as onboarded
+            $builder->insert([
+                'user_id' => $user->id,
+                'completed_at' => date('Y-m-d H:i:s')
+            ]);
         }
 
         $view = view('onboarding/complete');

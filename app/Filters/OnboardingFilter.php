@@ -11,10 +11,21 @@ class OnboardingFilter implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         $user = auth()->user();
+        $session = session();
 
-        // Check if the user has completed onboarding
-        if ($user && !$user->onboarding_completed) {
-            return redirect()->to('/onboarding');
+        if ($user) {
+            if (!$session->has('onboarding_completed')) {
+                // Check user onboarded status
+                $db = \Config\Database::connect();
+                $builder = $db->table('onboarding');
+                $onboarding = $builder->where('user_id', $user->id)->get()->getRow();
+
+                if (!$onboarding) {
+                    return redirect()->to('/onboarding');
+                }
+
+                $session->set('onboarding_completed', true);
+            }
         }
     }
 

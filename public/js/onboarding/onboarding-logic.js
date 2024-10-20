@@ -128,7 +128,7 @@ function nextQuestion() {
       makeAjaxCall('onboarding/submit', payload, function(response) {
         console.log(response);
 
-        // window.location.href = base_url + "onboarding/complete";
+        window.location.href = base_url + "onboarding/complete";
       });
 
       return;

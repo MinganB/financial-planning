@@ -1,57 +1,110 @@
 <link href="<?= base_url('css/fab.css?v=0.0.2') ?>" rel="stylesheet">
 
 <script>
-    let netWorth = {
-        assets: [
-            {
-            id: 1,
-            name: "Primary Residence",
-            value: 500000,
-            category: "Property",
-            image_id: 1,
-            notes: ""
-            },
-            {
-            id: 2,
-            name: "Car",
-            value: 20000,
-            category: "Motor Vehicles",
-            image_id: 3,
-            notes: ""
-            }
-        ],
-        liabilities: [
-            {
-            id: 1,
-            name: "Mortgage",
-            value: 250000,
-            category: "Mortgage",
-            image_id: 2,
-            notes: ""
-            },
-            {
-            id: 2,
-            name: "Auto Loan",
-            value: 15000,
-            category: "Auto Loan",
-            image_id: 4,
-            notes: ""
-            }
-        ]
-    };
+    let netWorth = JSON.parse(`<?= $netWorthJson ?>`);
+    console.log(JSON.stringify(netWorth));
 
     const images = [
-        base_url + "/img/icons8-home-94.png", // housing
-        base_url + "/img/icons8-road-94.png", // transport
-        base_url + "/img/icons8-noodles-94.png", // food
-        base_url + "/img/icons8-carousel-94.png", // entertainment
-        base_url + "/img/icons8-electricity-94.png", // utilities
-        base_url + "/img/icons8-receipt-94.png", // misc
+        base_url + "/img/icons8-home-94.png", // Property
+        base_url + "/img/icons8-car-94.png", // Vehicles
+        base_url + "/img/icons8-money-box-94.png", // Savings
+        base_url + "/img/icons8-money-94.png", // Investments
+        base_url + "/img/icons8-bank-94.png", // Loans
+        base_url + "/img/icons8-credit-card-cv-94.png", // Credit cards
+        base_url + "/img/icons8-bonds-94.png", // Pensions
+        base_url + "/img/icons8-company-94.png", // Business interest
+        base_url + "/img/icons8-cash-94.png", // Cash
+        base_url + "/img/icons8-tv-94.png", // Household content
+        base_url + "/img/icons8-physical-gallery-94.png", // Art
+        base_url + "/img/icons8-jewelery-94.png", // Jewellery
+        base_url + "/img/icons8-guarantee-94.png", // Insurance
+        base_url + "/img/icons8-closet-94.png", // Personal
+        base_url + "/img/icons8-cloakroom-94.png", // Clothing
+        base_url + "/img/icons8-store-94.png", // Store accounts
+        base_url + "/img/icons8-slice-94.png", // Employee benefits
+        base_url + "/img/icons8-receipt-94.png", // Other
     ];
+
+    const categories = [
+        "Property",           // 0
+        "Vehicles",           // 1
+        "Savings",            // 2
+        "Investments",        // 3
+        "Loans",              // 4
+        "Credit Cards",       // 5
+        "Pensions & Retirement", // 6
+        "Business Interests", // 7
+        "Cash",               // 8
+        "Household Contents", // 9
+        "Art & Collectibles", // 10
+        "Jewellery",          // 11
+        "Insurance Policies", // 12
+        "Personal Assets",    // 13
+        "Clothing",           // 14
+        "Store Accounts",     // 15
+        "Employee Benefits",  // 16
+        "Other",              // 17
+    ];
+
+    window.onload = function() {
+        buildDashboard();
+    };
+
+    // Add aggregation cards
+    function buildDashboard() {
+        // Clear the dashboard
+        let dashboardCardsContainer = document.getElementById("dashboardCards");
+        if(dashboardCardsContainer) {
+            while (dashboardCardsContainer.firstChild) {
+                dashboardCardsContainer.removeChild(dashboardCardsContainer.firstChild);
+            }
+        }
+
+        const totalAssets = netWorth.assets.reduce((sum, asset) => sum + parseFloat(asset.value), 0);
+        const totalLiabilities = netWorth.liabilities.reduce((sum, liability) => sum + parseFloat(liability.value), 0);
+        const totalNetWorth = (totalAssets - totalLiabilities);
+
+        const liquidAssetCategories = [2, 3, 8];
+        const totalLiquidAssets = netWorth.assets
+            .filter(asset => liquidAssetCategories.includes(parseInt(asset.category_id)))
+            .reduce((sum, asset) => sum + parseFloat(asset.value), 0);
+
+        addCard({
+            title: "Net Worth",
+            amount: "R " + totalNetWorth.toLocaleString(),
+            subtitle: "Assets minus debts",
+            href: "javascript:void(0)"
+        });
+
+        addCard({
+            title: "Total Assets",
+            amount: "R " + totalAssets.toLocaleString(),
+            subtitle: "Everything you own",
+            href: "javascript:void(0)"
+        });
+
+        addCard({
+            title: "Total Liabilities",
+            amount: "R " + totalLiabilities.toLocaleString(),
+            subtitle: "All your debt",
+            href: "javascript:void(0)"
+        });
+
+        addCard({
+            title: "Liquidity",
+            amount: "R " + totalLiquidAssets.toLocaleString(),
+            subtitle: "How much cash you have",
+            href: "javascript:void(0)"
+        });
+    }
 </script>
 
 <div class="container mt-4">
     <h3 class="my-4">Net Worth</h3>
+
+    <!-- Cards -->
+    <div id="dashboardCards" class="row mb-5 g-2">
+    </div>
 
     <ul class="nav nav-tabs mb-4" id="netWorthTabs" role="tablist">
         <li class="nav-item" role="presentation">
@@ -113,10 +166,7 @@
                     <div class="mb-3">
                         <label for="assetCategory" class="form-label">Category</label>
                         <select class="form-select" id="assetCategory" required>
-                            <option value="Property">Property</option>
-                            <option value="Motor Vehicles">Motor Vehicles</option>
-                            <option value="Investments">Investments</option>
-                            <!-- Add more categories as needed -->
+                            <!-- Added dynamically -->
                         </select>
                     </div>
                     <div class="mb-3">
@@ -157,10 +207,7 @@
                     <div class="mb-3">
                         <label for="liabilityCategory" class="form-label">Category</label>
                         <select class="form-select" id="liabilityCategory" required>
-                            <option value="Mortgage">Mortgage</option>
-                            <option value="Auto Loan">Auto Loan</option>
-                            <option value="Credit Card">Credit Card</option>
-                            <!-- TODO: Add more categories -->
+                            <!-- Added dynamically -->
                         </select>
                     </div>
                     <div class="mb-3">
@@ -180,4 +227,5 @@
     </div>
 </div>
 
-<script src="<?= base_url('js/networth/logic.js') ?>"></script>
+<script src="<?= base_url('js/networth/logic.js?v=0.0.4') ?>"></script>
+<script src="<?= base_url('js/cards.js?v=0.0.2') ?>"></script>

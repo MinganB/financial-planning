@@ -37,9 +37,13 @@ $routes->get('me/settings', 'SettingsController::index');
 $routes->get('me/budget', 'BudgetController::index');
 
 /**
- * Budget routes
+ * Net worth routes
  */
 $routes->get('me/net-worth', 'NetworthController::index');
+$routes->post('me/net-worth/update-asset', 'NetworthController::createOrUpdateAsset');
+$routes->post('me/net-worth/delete-asset', 'NetworthController::deleteAsset');
+$routes->post('me/net-worth/delete-liability', 'NetworthController::deleteLiability');
+$routes->post('me/net-worth/update-liability', 'NetworthController::createOrUpdateLiability');
 
 /**
  * Budget routes

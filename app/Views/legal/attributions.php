@@ -63,6 +63,49 @@
                                 <li>
                                     <a target="_blank" href="https://icons8.com/icon/wCClDpWTvma9/receipt">Receipt</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
                                 </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/2hkmIWmaOgIv/convertible">Car</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/yUTNKgUuTlsA/cash">Money</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/YCjbVoOxUsfY/money-box">Money Box</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/MEJBWouMsPdZ/bank">Bank</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/cHjdCLGtEXum/credit-card-cv">Credit card CV</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/HTaDCjn6FvxD/bonds">Bonds</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/LNojX5peb8UI/business-building">Company</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>   
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/wJrV9sVXUxTK/retro-tv">tv</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/h6II0AnEFd2X/physical-gallery">Physical Gallery</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/Va0yr8pF3UlY/jewelry">Jewelery</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/3KqnS78ZB6Ew/guarantee">Guarantee</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/UocWP7v06SAG/cloakroom">Cloakroom</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/XrEFnp33pJYw/shop">Store</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://icons8.com/icon/ektx9d1ZvY4q/slice">Slice</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                                </li>
+            
                             </ul>
                         </li>
                     </ul>

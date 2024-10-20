@@ -5,7 +5,7 @@ Globally available application JS methods.
 /**
  * Make an AJAX call to a POST method.
  * @param {string} endpoint Endpoint to call. Do not include the app base url.
- * @param {string} args Arguments to pass with request.
+ * @param {array} args Arguments to pass with request.
  * @param {string} callback Method to call with response.
  */
 function makeAjaxCall(endpoint, args, callback) {
@@ -26,7 +26,7 @@ function makeAjaxCall(endpoint, args, callback) {
         type: "POST",
         dataType: "json",
         success: function (response) {
-          if (response.csrf !== undefined) {
+          if (response.csrf !== undefined && csrfHash) {
             console.log("CSRF updated.");
             csrfHash.value = response.csrf;
           }

@@ -30,6 +30,8 @@ $routes->post('onboarding/submit', 'OnboardingController::submit');
  * Settings routes
  */
 $routes->get('me/settings', 'SettingsController::index');
+$routes->post('me/settings/delete-account', 'SettingsController::deleteUserAccount');
+$routes->post('me/settings/update-password', 'SettingsController::updatePassword');
 
 /**
  * Budget routes

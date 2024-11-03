@@ -47,9 +47,30 @@ document
     const confirmPassword = document.getElementById("confirmPassword").value;
 
     if (newPassword && newPassword === confirmPassword) {
-      alert("Password updated successfully.");
-      document.getElementById("newPassword").value = "";
-      document.getElementById("confirmPassword").value = "";
+      fetch(base_url + 'me/settings/update-password', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest',
+        },
+        body: JSON.stringify({
+          newPassword: newPassword
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 'success') {
+          alert("Password updated successfully.");
+          document.getElementById("newPassword").value = "";
+          document.getElementById("confirmPassword").value = "";
+        } else {
+          alert(data.message || "Failed to update password.");
+        }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        alert("An error occurred while updating the password.");
+      });
     } else {
       alert("Passwords do not match.");
     }
@@ -82,10 +103,32 @@ document
         "Are you sure you want to delete your account? This action cannot be undone."
       )
     ) {
-      // TODO: Ajax call to backend
-      alert("Account deleted.");
+      requestDeleteUserAccount();
     }
   });
 
 // Initialise the page
 populateSharedAccessList();
+
+function requestDeleteUserAccount() {
+  fetch(base_url + 'me/settings/delete-account', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest',
+      }
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.status === 'success') {
+          alert(data.message);
+          window.location.href = base_url + 'logout';
+      } else {
+          alert(data.message || "An error occurred while deleting the account.");
+      }
+  })
+  .catch(error => {
+      console.error("Error:", error);
+      alert("An error occurred while deleting the account.");
+  });
+}

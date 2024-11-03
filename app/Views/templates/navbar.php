@@ -11,19 +11,16 @@
                     <ul class="nav">
                         <li class="nav-item"><a href="<?= base_url('me') ?>" class="nav-link hover-link">Dashboard</a></li>
                         <li class="nav-item"><a href="<?= base_url('me/settings') ?>" class="nav-link hover-link">Settings</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link hover-link">Log out</a></li>
+                        <li class="nav-item"><a href="<?= base_url('logout') ?>" class="nav-link hover-link">Log out</a></li>
                     </ul>
                 </nav>
             </div>
 
             <!-- Mobile Header -->
             <div class="d-flex d-lg-none align-items-center justify-content-between w-100">
-                <button class="btn btn-link" id="backButton">
-                    OO
-                </button>
-                <h5 class="m-0 text-center flex-grow-1">Page Title</h5>
+                <h5 class="m-0 text-center flex-grow-1"><?= APP_NAME ?></h5>
                 <button class="btn btn-link ms-auto" id="menuButton" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-                    XX
+                    <img src="<?= base_url('img/icons8-hamburger-menu-94.png') ?>" width="24px">
                 </button>
             </div>
         </div>

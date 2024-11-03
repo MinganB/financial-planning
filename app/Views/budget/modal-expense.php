@@ -18,10 +18,6 @@
                     <div class="mb-3">
                         <label for="expenseType" class="form-label">Type</label>
                         <select class="form-select" id="expenseType" required>
-                            <option value="Living Expenses">Living Expenses</option>
-                            <option value="Travel">Travel</option>
-                            <option value="Groceries">Groceries</option>
-                            <option value="Leisure">Leisure</option>
                         </select>
                     </div>
                     <div class="mb-3">

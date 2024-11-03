@@ -99,7 +99,6 @@ class NetworthController extends BaseController
             $response['success'] = (isset($response['liabilityId']) && $response['liabilityId'] && is_int($response['liabilityId']));
         } else {
             // Updating an existing liability
-            log_message('info', 'OMP: '.json_encode($payload));
             $response['success'] = $networthModel->updateLiability($userId, $payload['liability_id'], $payload['name'], $payload['category_id'], $payload['notes'], $payload['value']);
         }
 

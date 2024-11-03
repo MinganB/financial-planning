@@ -1,3 +1,45 @@
+const images = [
+  base_url + "/img/icons8-home-94.png", // Property
+  base_url + "/img/icons8-car-94.png", // Vehicles
+  base_url + "/img/icons8-money-box-94.png", // Savings
+  base_url + "/img/icons8-money-94.png", // Investments
+  base_url + "/img/icons8-bank-94.png", // Loans
+  base_url + "/img/icons8-credit-card-cv-94.png", // Credit cards
+  base_url + "/img/icons8-bonds-94.png", // Pensions
+  base_url + "/img/icons8-company-94.png", // Business interest
+  base_url + "/img/icons8-cash-94.png", // Cash
+  base_url + "/img/icons8-tv-94.png", // Household content
+  base_url + "/img/icons8-physical-gallery-94.png", // Art
+  base_url + "/img/icons8-jewelery-94.png", // Jewellery
+  base_url + "/img/icons8-guarantee-94.png", // Insurance
+  base_url + "/img/icons8-closet-94.png", // Personal
+  base_url + "/img/icons8-cloakroom-94.png", // Clothing
+  base_url + "/img/icons8-store-94.png", // Store accounts
+  base_url + "/img/icons8-slice-94.png", // Employee benefits
+  base_url + "/img/icons8-receipt-94.png", // Other
+];
+
+const categories = [
+  "Property",           // 0
+  "Vehicles",           // 1
+  "Savings",            // 2
+  "Investments",        // 3
+  "Loans",              // 4
+  "Credit Cards",       // 5
+  "Pensions & Retirement", // 6
+  "Business Interests", // 7
+  "Cash",               // 8
+  "Household Contents", // 9
+  "Art & Collectibles", // 10
+  "Jewellery",          // 11
+  "Insurance Policies", // 12
+  "Personal Assets",    // 13
+  "Clothing",           // 14
+  "Store Accounts",     // 15
+  "Employee Benefits",  // 16
+  "Other",              // 17
+];
+
 let selectedAsset = null; // Track the asset being edited
 let selectedLiability = null; // Track the liability being edited
 
@@ -471,3 +513,48 @@ function addSelectorOption(selector, index, content) {
   selector.appendChild(option);
 }
     
+function buildDashboard() {
+  let dashboardCardsContainer = document.getElementById("dashboardCards");
+  if(dashboardCardsContainer) {
+      while (dashboardCardsContainer.firstChild) {
+          dashboardCardsContainer.removeChild(dashboardCardsContainer.firstChild);
+      }
+  }
+
+  const totalAssets = netWorth.assets.reduce((sum, asset) => sum + parseFloat(asset.value), 0);
+  const totalLiabilities = netWorth.liabilities.reduce((sum, liability) => sum + parseFloat(liability.value), 0);
+  const totalNetWorth = (totalAssets - totalLiabilities);
+
+  const liquidAssetCategories = [2, 3, 8];
+  const totalLiquidAssets = netWorth.assets
+      .filter(asset => liquidAssetCategories.includes(parseInt(asset.category_id)))
+      .reduce((sum, asset) => sum + parseFloat(asset.value), 0);
+
+  addCard({
+      title: "Net Worth",
+      amount: "R " + totalNetWorth.toLocaleString(),
+      subtitle: "Assets minus debts",
+      href: "javascript:void(0)"
+  });
+
+  addCard({
+      title: "Total Assets",
+      amount: "R " + totalAssets.toLocaleString(),
+      subtitle: "Everything you own",
+      href: "javascript:void(0)"
+  });
+
+  addCard({
+      title: "Total Liabilities",
+      amount: "R " + totalLiabilities.toLocaleString(),
+      subtitle: "All your debt",
+      href: "javascript:void(0)"
+  });
+
+  addCard({
+      title: "Liquidity",
+      amount: "R " + totalLiquidAssets.toLocaleString(),
+      subtitle: "How much cash you have",
+      href: "javascript:void(0)"
+  });
+}

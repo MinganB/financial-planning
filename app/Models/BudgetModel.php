@@ -72,4 +72,46 @@ class BudgetModel extends Model
 
         return ($this->db->affectedRows() > 0);
     }
+
+    public function addExpense($data)
+    {
+        $data['user_id'] = auth()->user()->id;
+
+        return $this->db->table('budget_expenses')
+            ->insert($data);
+    }
+
+    public function updateExpense($expenseId, $data)
+    {
+        return $this->db->table('budget_expenses')
+            ->where('expense_id', $expenseId)
+            ->update($data);
+    }
+
+    public function deleteExpense($expenseId)
+    {
+        $userId = auth()->user()->id;
+
+        return $this->db->table('budget_expenses')
+            ->where('expense_id', $expenseId)
+            ->where('user_id', $userId)
+            ->delete();
+    }
+
+    public function getActiveExpenses($userId)
+    {
+        $today = date('Y-m-d');
+        $endOfMonth = date('Y-m-t'); // Last day of the current month
+
+        $query = $this->db->table('budget_expenses')
+            ->where('user_id', $userId)
+            ->groupStart() 
+                ->where('end_date IS NULL')
+                ->orWhere('end_date >', $today)
+            ->groupEnd()
+            ->where('start_date <=', $endOfMonth)
+            ->get();
+
+        return $query->getResultArray();
+    }
 }

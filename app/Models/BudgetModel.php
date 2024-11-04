@@ -114,4 +114,38 @@ class BudgetModel extends Model
 
         return $query->getResultArray();
     }
+
+    public function addActualExpense($userId, $expenseId, $description, $amount, $expenseDate)
+    {
+        $data = [
+            'user_id' => $userId,
+            'expense_id' => $expenseId,
+            'description' => $description,
+            'amount' => $amount,
+            'expense_date' => $expenseDate,
+        ];
+
+        return $this->db->table('budget_expenses_actual')->insert($data);
+    }
+
+    public function deleteActualExpense($actualExpenseId)
+    {
+        return $this->db->table('budget_expenses_actual')
+                        ->where('actual_expense_id', $actualExpenseId)
+                        ->delete();
+    }
+
+    public function getExpensesForCurrentMonth($userId)
+    {
+        $builder = $this->db->table('budget_expenses_actual');
+
+        $startOfMonth = date('Y-m-01');
+        $endOfMonth = date('Y-m-t');
+
+        return $builder->where('user_id', $userId)
+                    ->where('expense_date >=', $startOfMonth)
+                    ->where('expense_date <=', $endOfMonth)
+                    ->get()
+                    ->getResultArray();
+    }
 }

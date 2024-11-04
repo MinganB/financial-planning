@@ -434,9 +434,10 @@ function buildBudgetDashboard() {
       href: "javascript:void(0)"
   });
 
+  const totalSpentAmount = expenseActuals.reduce((sum, expense) => sum + Number(expense.amount), 0);
   addCard({
       title: "Total expenses",
-      amount: "R " + 0,
+      amount: "R " + totalSpentAmount.toLocaleString(),
       subtitle: "Actual amount spent",
       href: "javascript:void(0)"
   });

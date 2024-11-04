@@ -43,7 +43,22 @@
         <div class="tab-pane fade" id="monthly-expenses" role="tabpanel" aria-labelledby="monthly-expenses-tab">
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h4 class="my-4">This Month's Expenses</h4>
-                <a href="#" id="add-monthly-expense-link" class="d-none d-md-inline-block btn btn-link text-decoration-none" data-bs-toggle="modal" data-bs-target="#monthlyExpenseModal">+ Add new</a>
+                <a href="#" id="add-monthly-expense-link" class="d-none d-md-inline-block btn btn-link text-decoration-none" data-bs-toggle="modal" data-bs-target="#actualExpenseModal">+ Add new</a>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-hover" id="expensesTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">Category</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
             </div>
             
         </div>

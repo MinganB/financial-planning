@@ -84,11 +84,15 @@ document
   .addEventListener("click", function () {
     const sharingSettings = document.getElementById("sharingSettings").value;
     const budgetVisibility = document.getElementById("budgetVisibility").value;
-    const netWorthVisibility =
-      document.getElementById("netWorthVisibility").value;
+    const netWorthVisibility = document.getElementById("netWorthVisibility").value;
 
-    // TODO: AJAX update
-    alert("Privacy settings updated.");
+    makeAjaxCall('me/settings/update-privacy-settings', {
+      sharing: sharingSettings,
+      budget_visibility: budgetVisibility,
+      net_worth_visibility: netWorthVisibility,
+    }, (result) => {
+      alert(result.message);
+    });
   });
 
 /**

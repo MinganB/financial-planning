@@ -15,10 +15,12 @@ class BudgetController extends BaseController
     public function index()
     {
         $data['expenseData'] = $this->budgetModel->getActiveExpenses(auth()->user()->id);
+        $data['expenseActuals'] = $this->budgetModel->getExpensesForCurrentMonth(auth()->user()->id);
 
         $view = view('budget/main', $data)
             . view('budget/modal-income')
-            . view('budget/modal-expense');
+            . view('budget/modal-expense')
+            . view('budget/modal-actual-expense');
         return $this->getPreparedView($view);
     }
 
@@ -51,6 +53,35 @@ class BudgetController extends BaseController
             return $this->response->setJSON(['success' => true, 'message' => 'Expense deleted successfully', 'csrf' => csrf_hash()]);
         } else {
             return $this->response->setJSON(['success' => 'error', 'message' => 'Failed to delete expense', 'csrf' => csrf_hash()]);
+        }
+    }
+
+    public function addActualExpense()
+    {
+        $postData = json_decode($this->request->getPost('payload'), true);
+
+        $expenseId = $postData['expense_id'];
+        $description = $postData['description'];
+        $amount = $postData['amount'];
+        $expenseDate = $postData['expense_date'];
+
+        $result = $this->budgetModel->addActualExpense(auth()->user()->id, $expenseId, $description, $amount, $expenseDate);
+
+        if ($result) {
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Expense added successfully']);
+        } else {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to add expense']);
+        }
+    }
+
+    public function deleteActualExpense($actualExpenseId)
+    {
+        $result = $this->budgetModel->deleteActualExpense($actualExpenseId);
+
+        if ($result) {
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Expense deleted successfully']);
+        } else {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to delete expense']);
         }
     }
 }

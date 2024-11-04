@@ -41,30 +41,34 @@
     <!-- Privacy and Sharing -->
     <section>
         <h4>Privacy and Sharing</h4>
+
         <div class="mb-3">
             <label for="sharingSettings" class="form-label">Sharing</label>
             <select id="sharingSettings" class="form-select">
-                <option value="view">Allow view access</option>
-                <option value="edit">Allow edit access</option>
-                <option value="none">Don't allow access</option>
+                <option value="none" <?= $privacy['sharing'] == 'none' ? 'selected' : '' ?>>Don't allow access</option>
+                <option value="view" <?= $privacy['sharing'] == 'view' ? 'selected' : '' ?>>Allow view access</option>
+                <option value="edit" <?= $privacy['sharing'] == 'edit' ? 'selected' : '' ?>>Allow edit access</option>
             </select>
         </div>
+
         <div class="mb-3">
             <label for="budgetVisibility" class="form-label">Budget visibility</label>
             <select id="budgetVisibility" class="form-select">
-                <option value="everyone">Everyone </option>
-                <option value="adviser">Me and my adviser</option>
-                <option value="private">Just me</option>
+                <option value="private" <?= $privacy['budget_visibility'] == 'private' ? 'selected' : '' ?>>Just me</option>
+                <option value="adviser" <?= $privacy['budget_visibility'] == 'adviser' ? 'selected' : '' ?>>Me and my adviser</option>
+                <option value="everyone" <?= $privacy['budget_visibility'] == 'everyone' ? 'selected' : '' ?>>Everyone</option>
             </select>
         </div>
+
         <div class="mb-3">
             <label for="netWorthVisibility" class="form-label">Net worth visibility</label>
             <select id="netWorthVisibility" class="form-select">
-                <option value="everyone">Everyone </option>
-                <option value="adviser">Me and my adviser</option>
-                <option value="private">Just me</option>
+                <option value="private" <?= $privacy['net_worth_visibility'] == 'private'? 'selected' : '' ?>>Just me</option>
+                <option value="adviser" <?= $privacy['net_worth_visibility'] == 'adviser' ? 'selected' : '' ?>>Me and my adviser</option>
+                <option value="everyone" <?= $privacy['net_worth_visibility'] == 'everyone' ? 'selected' : '' ?>>Everyone</option>
             </select>
         </div>
+
         <button id="updatePrivacyButton" class="btn btn-dark">Update Settings</button>
     </section>
 
@@ -89,4 +93,4 @@
     </section>
 </div>
 
-<script src="<?= base_url('js/settings/logic.js?v=0.0.1') ?>"></script>
+<script src="<?= base_url('js/settings/logic.js?v=0.0.2') ?>"></script>

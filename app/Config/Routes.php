@@ -12,6 +12,10 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'FrontendController::index');
 $routes->get('/attributions', 'FrontendController::attributions');
 $routes->get('/about', 'FrontendController::about');
+$routes->get('/privacy-policy', 'FrontendController::privacyPolicy');
+$routes->get('/terms-of-service', 'FrontendController::tos');
+$routes->get('/popia-policy', 'FrontendController::popia');
+$routes->get('/contact', 'FrontendController::contact');
 
 /**
  * Dashboard routes
@@ -30,6 +34,7 @@ $routes->post('onboarding/submit', 'OnboardingController::submit');
  * Settings routes
  */
 $routes->get('me/settings', 'SettingsController::index');
+$routes->post('me/settings/update-privacy-settings', 'SettingsController::updatePrivacySettings');
 $routes->post('me/settings/delete-account', 'SettingsController::deleteUserAccount');
 $routes->post('me/settings/update-password', 'SettingsController::updatePassword');
 
@@ -40,6 +45,9 @@ $routes->get('me/budget', 'BudgetController::index');
 $routes->post('me/budget/add-expense', 'BudgetController::addExpense');
 $routes->post('me/budget/update-expense/(:num)', 'BudgetController::updateExpense/$1');
 $routes->post('me/budget/delete-expense/(:num)', 'BudgetController::deleteExpense/$1');
+$routes->post('me/budget/add-actual-expense', 'BudgetController::addActualExpense');
+$routes->post('me/budget/delete-actual-expense/(:num)', 'BudgetController::deleteActualExpense/$1');
+
 
 /**
  * Net worth routes

@@ -2,13 +2,17 @@
 
 namespace App\Controllers;
 
+use App\Models\BudgetModel;
+
 class DashboardController extends BaseController
 {
     public function index()
     {
-        $view = view('dashboard/main')
+        $data['expenseData'] = model(BudgetModel::class)->getActiveExpenses(auth()->user()->id);
+
+        $view = view('dashboard/main', $data)
             . view('budget/modal-income')
-            . view('budget/modal-expense');
+            . view('budget/modal-actual-expense');
         return $this->getPreparedView($view);
     }
 }

@@ -1,13 +1,13 @@
 const expenseBudgetAllocationSelect = document.getElementById('expenseBudgetAllocation');
 expenses.forEach(expense => {
     const option = document.createElement('option');
-    option.value = expense.id;
+    option.value = (expense.id !== undefined) ? expense.id : expense.expense_id;
     option.textContent = expense.title;
     expenseBudgetAllocationSelect.appendChild(option);
 });
 
 document.getElementById('saveActualExpenseButton').addEventListener('click', function() {
-    const category = document.getElementById('expenseBudgetAllocation').value;
+    const category = expenseBudgetAllocationSelect.value;
     const description = document.getElementById('actualExpenseDescription').value;
     const amount = document.getElementById('actualExpenseAmount').value;
     const date = document.getElementById('actualExpenseDate').value;
@@ -24,7 +24,12 @@ function saveActualExpense(category, description, amount, date) {
     };
 
     requestAddActualExpense(newExpense);
-    if(expenseActuals !== null) addActualExpenseToDOM(newExpense);
+    if(expenseActuals !== null) {
+        addActualExpenseToDOM(newExpense); 
+    } else {
+        alert('Expense has been saved!');
+        document.getElementById('closeActualExpensesModal').click();
+    }
 }
 
 function requestAddActualExpense(expenseArgs) {
@@ -77,4 +82,11 @@ function addActualExpenseToDOM(expense) {
     expensesTableBody.appendChild(row);
 
     document.getElementById('closeActualExpensesModal').click();
+}
+
+// Prepare the page
+if(expenseActuals !== null) {
+    expenseActuals.forEach(actual => {
+        addActualExpenseToDOM(actual);
+    });
 }

@@ -9,6 +9,7 @@ class BudgetModel extends Model
     /**
      * Add an income to the user's budget.
      * 
+     * @param string $name Name/title of the income.
      * @param float $amount Monthly income amount as a decimal float.
      * @param string $description Short description of the income.
      * @param int $categoryId Category of the income.
@@ -17,14 +18,15 @@ class BudgetModel extends Model
      * 
      * @return int Returns the income_id of the newly created income, or null if an error was encountered.
      */
-    public function addIncome($amount, $description, $categoryId, $startDate, $endDate = null) {
+    public function addIncome($name, $amount, $description, $categoryId, $startDate, $endDate = null) {
         $data = [
             'user_id' => auth()->user()->id,
+            'name' => $name,
             'amount' => $amount,
             'description' => $description,
             'category_id' => $categoryId,
             'start_date' => $startDate,
-            'end_date' => $endDate
+            'end_date' => ($endDate == '') ? null : $endDate,
         ];
 
         $this->db->table('budget_incomes')->insert($data);

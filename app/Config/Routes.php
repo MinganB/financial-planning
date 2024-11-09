@@ -42,6 +42,7 @@ $routes->post('me/settings/update-password', 'SettingsController::updatePassword
  * Budget routes
  */
 $routes->get('me/budget', 'BudgetController::index');
+$routes->post('me/budget/add-income', 'BudgetController::addIncome');
 $routes->post('me/budget/add-expense', 'BudgetController::addExpense');
 $routes->post('me/budget/update-expense/(:num)', 'BudgetController::updateExpense/$1');
 $routes->post('me/budget/delete-expense/(:num)', 'BudgetController::deleteExpense/$1');

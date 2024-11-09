@@ -38,12 +38,4 @@
     </div>
 </div>
 
-<script src="<?= base_url('js/budget/actual-expense-logic.js?v=0.0.1') ?>"></script>
-
-<script>
-    if(expenseActuals !== null) {
-        expenseActuals.forEach(actual => {
-            addActualExpenseToDOM(actual);
-        });
-    }
-</script>
+<script src="<?= base_url('js/budget/actual-expense-logic.js?v=0.0.3') ?>"></script>

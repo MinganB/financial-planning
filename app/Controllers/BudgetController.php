@@ -3,6 +3,8 @@
 namespace App\Controllers;
 use App\Models\BudgetModel;
 
+use function PHPUnit\Framework\isNan;
+
 class BudgetController extends BaseController
 {
     protected $budgetModel;
@@ -24,6 +26,19 @@ class BudgetController extends BaseController
         return $this->getPreparedView($view);
     }
 
+    public function addIncome()
+    {
+        $postData = json_decode($this->request->getPost('payload'), true);
+
+        $addIncome = $this->budgetModel->addIncome($postData['name'], $postData['amount'], $postData['description'], $postData['category_id'], $postData['start_date'], $postData['end_date']);
+
+        if ($addIncome !== null) {
+            return $this->response->setJSON(['success' => true, 'message' => 'Income added successfully', 'csrf' => csrf_hash()]);
+        } else {
+            return $this->response->setJSON(['success' => false, 'message' => 'Failed to add income', 'csrf' => csrf_hash()]);
+        }
+    }
+
     public function addExpense()
     {
         $data = $this->request->getJSON(true);
@@ -31,7 +46,7 @@ class BudgetController extends BaseController
         if ($this->budgetModel->addExpense($data)) {
             return $this->response->setJSON(['success' => true, 'message' => 'Expense added successfully', 'csrf' => csrf_hash()]);
         } else {
-            return $this->response->setJSON(['success' => 'error', 'message' => 'Failed to add expense', 'csrf' => csrf_hash()]);
+            return $this->response->setJSON(['success' => false, 'message' => 'Failed to add expense', 'csrf' => csrf_hash()]);
         }
     }
 
@@ -43,7 +58,7 @@ class BudgetController extends BaseController
         if ($this->budgetModel->updateExpense($expenseId, $data)) {
             return $this->response->setJSON(['success' => true, 'message' => 'Expense updated successfully', 'csrf' => csrf_hash()]);
         } else {
-            return $this->response->setJSON(['success' => 'error', 'message' => 'Failed to update expense', 'csrf' => csrf_hash()]);
+            return $this->response->setJSON(['success' => false, 'message' => 'Failed to update expense', 'csrf' => csrf_hash()]);
         }
     }
 
@@ -52,7 +67,7 @@ class BudgetController extends BaseController
         if ($this->budgetModel->deleteExpense($expenseId)) {
             return $this->response->setJSON(['success' => true, 'message' => 'Expense deleted successfully', 'csrf' => csrf_hash()]);
         } else {
-            return $this->response->setJSON(['success' => 'error', 'message' => 'Failed to delete expense', 'csrf' => csrf_hash()]);
+            return $this->response->setJSON(['success' => false, 'message' => 'Failed to delete expense', 'csrf' => csrf_hash()]);
         }
     }
 

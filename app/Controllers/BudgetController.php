@@ -3,8 +3,6 @@
 namespace App\Controllers;
 use App\Models\BudgetModel;
 
-use function PHPUnit\Framework\isNan;
-
 class BudgetController extends BaseController
 {
     protected $budgetModel;
@@ -30,7 +28,7 @@ class BudgetController extends BaseController
     {
         $postData = json_decode($this->request->getPost('payload'), true);
 
-        $addIncome = $this->budgetModel->addIncome($postData['name'], $postData['amount'], $postData['description'], $postData['category_id'], $postData['start_date'], $postData['end_date']);
+        $addIncome = $this->budgetModel->addIncome($postData);
 
         if ($addIncome !== null) {
             return $this->response->setJSON(['success' => true, 'message' => 'Income added successfully', 'csrf' => csrf_hash()]);

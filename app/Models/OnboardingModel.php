@@ -8,11 +8,16 @@ class OnboardingModel extends Model
 {
     /**
      * Updates a user's onboarding data.
+     * 
+     * @param int $userId User to update data for.
+     * @param array $data Array of data to update with columns as keys.
+     * 
+     * @return bool True if succeeded, false otherwise.
      */
-    public function update_data($userId, $data) {
+    public function updateData($userId, $data) {
         helper('onboarding');
         helper('dictionary');
-        log_message('debug', json_encode($data));
+        helper('format');
 
         $user_details = [];
         $user_details_fields = getUserDetailsFields();
@@ -108,16 +113,16 @@ class OnboardingModel extends Model
         }
 
         if(count($user_details) > 0)
-            $this->update_user_details($userId, $user_details);
+            $this->updateUserDetails($userId, $user_details);
 
         if(count($user_data) > 0)
-            $this->update_user_data($userId, $user_data);
+            $this->updateUserData($userId, $user_data);
 
         if(count($user_employment) > 0)
-            $this->update_user_employment($userId, $user_employment);
+            $this->updateUserEmployment($userId, $user_employment);
 
         if(count($user_underwriting) > 0)
-            $this->update_user_underwriting($userId, $user_underwriting);
+            $this->updateUserUnderwriting($userId, $user_underwriting);
 
         return true;
     }
@@ -129,7 +134,7 @@ class OnboardingModel extends Model
      * @param array $data Array of data to update with columns as keys.
      * @return bool True if succeeded.
      */
-    private function update_user_details($userId, $data)
+    private function updateUserDetails($userId, $data)
     {
         $allowedFields = [
             'title',
@@ -159,7 +164,7 @@ class OnboardingModel extends Model
      * @param array $data Array of data to update with columns as keys.
      * @return bool True if succeeded.
      */
-    private function update_user_underwriting($userId, $data)
+    private function updateUserUnderwriting($userId, $data)
     {
         $allowedFields = [
             'medical_scheme',
@@ -188,7 +193,7 @@ class OnboardingModel extends Model
      * @param array $data Array of data to update with columns as keys.
      * @return bool True if succeeded.
      */
-    private function update_user_data($userId, $data)
+    private function updateUserData($userId, $data)
     {
         $allowedFields = [
             'full_name',
@@ -224,7 +229,7 @@ class OnboardingModel extends Model
      * @param array $data Array of data to update with columns as keys.
      * @return bool True if succeeded.
      */
-    private function update_user_employment($userId, $data)
+    private function updateUserEmployment($userId, $data)
     {
         $allowedFields = [
             'employment_status',
@@ -242,31 +247,5 @@ class OnboardingModel extends Model
         $result = updateDataInDB('user_employment', $userId, $data, $allowedFields);
 
         return $result;
-    }
-
-    /**
-     * Returns date in 'YYYY-MM-DD' format. 
-     *
-     * @param int $year Year in format YYYY.
-     * @param int $month (Optional) Month. Defaults to '1'.
-     * @param int $day (Optional) Day. Defaults to '1'.
-     * @return string Date in 'YYYY-MM-DD' format - null if failed.
-     */
-    private function formatDate($year, $month = 1, $day = 1) {
-        $year = intval($year);
-        $day = (!is_int($day) || $day < 1 || $day > 31) ? 1 : $day;
-        $month = (!is_int($month) || $month < 1 || $month > 12) ? 1 : $month;
-
-        if (!is_int($year)) {
-            return null;
-        }
-    
-        $formatted_month = str_pad($month, 2, '0', STR_PAD_LEFT);
-        $formatted_day = str_pad($day, 2, '0', STR_PAD_LEFT);
-    
-        $formatted_date = $year . '-' . $formatted_month . '-' . $formatted_day;
-        log_message('info', 'Anniversary date is '.$formatted_date);
-
-        return $formatted_date;
     }
 }

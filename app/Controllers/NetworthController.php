@@ -6,10 +6,17 @@ use App\Models\NetworthModel;
 
 class NetworthController extends BaseController
 {
+    protected $netWorthModel;
+
+    public function __construct()
+    {
+        $this->netWorthModel = model(NetworthModel::class);
+    }
+
     public function index()
     {
         $userId = auth()->user()->id;
-        $networthModel = model(NetworthModel::class);
+        $networthModel = $this->netWorthModel;
 
         $assets = $networthModel->getUserCurrentAssets($userId);
         $liabilities =$networthModel->getUserCurrentLiabilities($userId);
@@ -23,10 +30,12 @@ class NetworthController extends BaseController
         return $this->getPreparedView($view);
     }
 
-    // Delete an asset by its ID
+    /**
+     * Delete an asset by its ID
+     */
     public function deleteAsset() {
         $userId = auth()->user()->id;
-        $networthModel = model(NetworthModel::class);
+        $networthModel = $this->netWorthModel;
 
         $postData = $this->request->getPost();
         $payload = json_decode($postData['payload'], true);
@@ -42,10 +51,12 @@ class NetworthController extends BaseController
         return $this->response->setJSON($response); 
     }
 
-    // Delete a liability by its ID
+    /**
+     * Delete a liability by its ID
+     */
     public function deleteLiability() {
         $userId = auth()->user()->id;
-        $networthModel = model(NetworthModel::class);
+        $networthModel = $this->netWorthModel;
 
         $postData = $this->request->getPost();
         $payload = json_decode($postData['payload'], true);
@@ -63,7 +74,7 @@ class NetworthController extends BaseController
 
     public function createOrUpdateAsset() {
         $userId = auth()->user()->id;
-        $networthModel = model(NetworthModel::class);
+        $networthModel = $this->netWorthModel;
 
         $postData = $this->request->getPost();
         $payload = json_decode($postData['payload'], true);
@@ -85,7 +96,7 @@ class NetworthController extends BaseController
 
     public function createOrUpdateLiability() {
         $userId = auth()->user()->id;
-        $networthModel = model(NetworthModel::class);
+        $networthModel = $this->netWorthModel;
 
         $postData = $this->request->getPost();
         $payload = json_decode($postData['payload'], true);

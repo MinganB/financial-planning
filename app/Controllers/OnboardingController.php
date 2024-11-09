@@ -3,10 +3,16 @@
 namespace App\Controllers;
 
 use App\Models\OnboardingModel;
-use CodeIgniter\Shield\Models\UserModel;
 
 class OnboardingController extends BaseController
 {
+    protected $onboardingModel;
+
+    public function __construct()
+    {
+        $this->onboardingModel = model(OnboardingModel::class);
+    }
+
     /**
      * Welcomes the user to the onboarding / data capture process.
      */
@@ -31,7 +37,7 @@ class OnboardingController extends BaseController
         $postData = $this->request->getPost();
         $payload = json_decode($postData['payload']);
 
-        $result = model(OnboardingModel::class)->update_data($user_id, $payload);
+        $result = $this->onboardingModel->updateData($user_id, $payload);
 
         $data = [
             'success' => $result,

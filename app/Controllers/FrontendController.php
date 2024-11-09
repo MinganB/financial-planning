@@ -4,6 +4,9 @@ namespace App\Controllers;
 
 class FrontendController extends BaseController
 {
+    /**
+     * Home page.
+     */
     public function index()
     {
         $view = view('frontend/home');

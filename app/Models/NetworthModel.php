@@ -49,7 +49,7 @@ class NetworthModel extends Model
      * @param int $userId ID of user owning the asset
      * @param int $assetId ID of the asset to delete
      * 
-     * @return bool True if an asset was deleted, false otherwise.
+     * @return bool True if an asset was deleted, false if asset not found or not owned by user.
      */
     public function deleteAssetById($userId, $assetId) {
         // Confirm asset belongs to user
@@ -59,9 +59,8 @@ class NetworthModel extends Model
                           ->get()
                           ->getRow();
     
-        // If asset exists and belongs to  user, proceed
         if ($asset) {
-            // Delete value hisotry
+            // Delete values hisotry
             $this->db->table('nw_asset_values')
                      ->where('asset_id', $assetId)
                      ->delete();
@@ -74,7 +73,7 @@ class NetworthModel extends Model
     
             return true;
         } else {
-            return false; // Asset not found or not owned by user
+            return false;
         }
     }  
 
@@ -113,13 +112,15 @@ class NetworthModel extends Model
     }  
     
     /**
-     * Create a new asset for a user
+     * Create a new asset for a user and log its initial market value.
      * 
-     * @param int $userId ID of user owning the asset
-     * @param string $name Name of the asset
-     * @param float $value Current market value of the asset
-     * @param int $categoryId ID of the asset category
-     * @param string $description Asset notes / description.
+     * @param int $userId The ID of the user who owns the asset.
+     * @param string $name The name of the asset.
+     * @param float $value The current market value of the asset as a decimal float (e.g., 100000.00).
+     * @param int $categoryId The ID of the asset category.
+     * @param string $description Notes or additional information.
+     * 
+     * @return int|bool The ID of the newly created asset if successful, or false if failed.
      */
     public function createAsset($userId, $name, $value, $categoryId, $description) {
         $db = \Config\Database::connect();
@@ -162,7 +163,7 @@ class NetworthModel extends Model
      * @param string $name Updated name of the asset
      * @param int $categoryId Updated ID of the asset category
      * @param string $description Updated asset notes / description
-     * @param float|null $value New market value of the asset (if provided)
+     * @param float|null $value (Optional) New market value of the asset.
      * 
      * @return bool Whether the update was successful or not
      */
@@ -219,6 +220,17 @@ class NetworthModel extends Model
         return true;
     }
 
+    /**
+     * Create a new liability for a user and log its balance.
+     * 
+     * @param int $userId User who owns the liability.
+     * @param string $name The name of the liability.
+     * @param float $value The current balance of the liability as a decimal float (e.g., 100000.00).
+     * @param int $categoryId The ID of the liability category.
+     * @param string $description Notes or additional information about the debt.
+     * 
+     * @return int|bool The ID of the newly created liability if successful, or false if failed.
+     */
     public function createLiability($userId, $name, $value, $categoryId, $description) {
         $db = \Config\Database::connect();
 
@@ -252,6 +264,16 @@ class NetworthModel extends Model
         return $liabilityId;
     }  
 
+    /**
+     * Update a liability for the given user.
+     * 
+     * @param int $userId User who owns the liability.
+     * @param int $liabilityId Liability to edit.
+     * @param string $name Updated liability name.
+     * @param int $categoryId Updated liability category.
+     * @param string $description Updated liability description/notes.
+     * @param float|null $value (Optional) Updated liability value.
+     */
     public function updateLiability($userId, $liabilityId, $name, $categoryId, $description, $value = null) {
         $db = \Config\Database::connect();
 

@@ -12,6 +12,9 @@ class SettingsController extends BaseController
         $this->settingsModel = model(SettingsModel::class);
     }
     
+    /**
+     * Display settings page.
+     */
     public function index()
     {
         $data['privacy'] = $this->settingsModel->getPrivacySettings(auth()->user()->id);
@@ -20,6 +23,9 @@ class SettingsController extends BaseController
         return $this->getPreparedView($view);
     }
 
+    /**
+     * Update user password.
+     */
     public function updatePassword()
     {
         $request = $this->request->getJSON();
@@ -51,6 +57,9 @@ class SettingsController extends BaseController
         }
     }
 
+    /**
+     * Update user's privacy controls.
+     */
     public function updatePrivacySettings() {
         $postData = json_decode($this->request->getPost('payload'), true);
 
@@ -68,6 +77,9 @@ class SettingsController extends BaseController
         }
     }
 
+    /**
+     * Delete user's account (soft delete).
+     */
     public function deleteUserAccount()
     {
         $users = auth()->getProvider();

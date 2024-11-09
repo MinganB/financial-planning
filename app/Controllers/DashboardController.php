@@ -6,6 +6,9 @@ use App\Models\BudgetModel;
 
 class DashboardController extends BaseController
 {
+    /**
+     * Displays main dashboard.
+     */
     public function index()
     {
         $data['expenseData'] = model(BudgetModel::class)->getActiveExpenses(auth()->user()->id);

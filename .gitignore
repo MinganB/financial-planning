@@ -92,7 +92,6 @@ phpunit
 # Composer
 #-------------------------
 vendor/
-!vendor/codeigniter4/shield/src/
 composer.lock
 
 #-------------------------

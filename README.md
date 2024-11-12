@@ -33,20 +33,26 @@ Additionally, make sure that the following extensions are enabled in PHP:
 
 ## Installation steps (using Composer on Linux)
 1. Clone the project's ([GitHub repository](https://github.com/MinganB/financial-planning.git)) to the working directory
+- Using:
 ```sudo git clone https://github.com/MinganB/financial-planning.git .```
 2. Install the project dependancies
+- Using:
 ```composer install```
 3. Set the correct file permissions, ensuring the "writable" file is writable
 ```sudo chmod -R 0777 writable```
 4. Update the document root to point to CodeIgniter's public folder (e.g. /var/www/html/.../public)
+- Set the root:
 ```sudo vi /etc/httpd/conf/httpd.conf```
 ...
 ```sudo systemctl restart httpd```
 5. Migrate the database
-Transfer ```migrations.sql``` to your web-server and import into MariaDB
+- Transfer ```migrations.sql``` to your web-server and import into MariaDB
 6. Update the .env file
-Copy the env file to ```.env``` and complete the MariaDB database connection details
-7. Ensure that the .env file has the correct file permissions and is not publicly accessible, for example using:
-```<Files ".env">
+- Copy the env file to ```.env``` and complete the MariaDB database connection details
+7. Ensure that the .env file has the correct file permissions and is not publicly accessible
+- For example using the following rule:
+```
+<Files ".env">
     Require all denied
-</Files>```
+</Files>
+```

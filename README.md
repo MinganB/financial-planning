@@ -39,6 +39,7 @@ Additionally, make sure that the following extensions are enabled in PHP:
 - Using:
 ```composer install```
 3. Set the correct file permissions, ensuring the "writable" file is writable
+- Using:
 ```sudo chmod -R 0777 writable```
 4. Update the document root to point to CodeIgniter's public folder (e.g. /var/www/html/.../public)
 - Set the root:

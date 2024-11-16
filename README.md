@@ -1,8 +1,24 @@
 # Financial planning app
 
-## Server Requirements
+## Docker installation (Recommended)
 
-### PHP version 8.1 or higher is required, with the following extensions installed:
+- This guide provides step-by-step instructions for setting up the app using Docker.
+
+### Prerequisites
+1. Docker
+2. Docker compose
+
+### Installation steps
+1. Clone the repository to your local machine:
+- `git clone https://github.com/MinganB/financial-planning.git`
+2. Build and start the docker container
+- `docker compose up --build`
+
+## Manual installation (Not recommended)
+
+### Server Requirements
+
+#### PHP version 8.1 or higher is required, with the following extensions installed:
 
 - [intl](http://php.net/manual/en/intl.requirements.php)
 - [mbstring](http://php.net/manual/en/mbstring.installation.php)
@@ -19,19 +35,19 @@ Additionally, make sure that the following extensions are enabled in PHP:
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if using MySQL
 - [libcurl](http://php.net/manual/en/curl.requirements.php) if using HTTP\CURLRequest library
 
-### Apache HTTP server is required (version 2.4 preferred)
+#### Apache HTTP server is required (version 2.4 preferred)
 
 - https://httpd.apache.org/docs/2.4/install.html
 
-### MariaDB Server version 11.0 or higher
+#### MariaDB Server version 11.0 or higher
 
 - https://mariadb.com/kb/en/getting-installing-and-upgrading-mariadb/
 
-### Composer Dependency Manager for PHP version 2.8 or higher
+#### Composer Dependency Manager for PHP version 2.8 or higher
 
 - https://getcomposer.org/
 
-## Installation steps (using Composer on Linux)
+### Installation steps (using Composer on Linux)
 1. Clone the project's ([GitHub repository](https://github.com/MinganB/financial-planning.git)) to the working directory
 - Using:
 ```sudo git clone https://github.com/MinganB/financial-planning.git .```

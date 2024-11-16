@@ -30,6 +30,8 @@ RUN mkdir -p /var/www/html/writable/cache \
     && chown -R www-data:www-data /var/www/html/writable/cache \
     && chmod -R 775 /var/www/html/writable/cache
 
+RUN a2enmod rewrite
+
 COPY codeigniter.conf /etc/apache2/sites-available/
 RUN a2ensite codeigniter.conf \
     && service apache2 reload || true

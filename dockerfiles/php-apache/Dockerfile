@@ -22,6 +22,10 @@ COPY env_template /var/www/html/.env
 RUN chown www-data:www-data /var/www/html/.env \
     && chmod 664 /var/www/html/.env
 
+RUN mkdir -p /var/www/html/writable \
+    && chown -R www-data:www-data /var/www/html/writable \
+    && chmod -R 775 /var/www/html/writable
+
 RUN mkdir -p /var/www/html/writable/cache \
     && chown -R www-data:www-data /var/www/html/writable/cache \
     && chmod -R 775 /var/www/html/writable/cache

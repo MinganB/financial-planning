@@ -17,7 +17,7 @@ RUN git clone https://github.com/MinganB/financial-planning.git . \
 RUN chown -R www-data:www-data /var/www/html \
     && composer self-update
 
-COPY .env /var/www/html/.env
+COPY env_template /var/www/html/.env
 
 RUN chown www-data:www-data /var/www/html/.env \
     && chmod 664 /var/www/html/.env

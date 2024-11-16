@@ -1,0 +1,4 @@
+CI_ENVIRONMENT=development
+app.baseURL='http://127.0.0.1/'
+database.default.hostname = 'db'
+database.default.password = gUWrv87561b28Kwr

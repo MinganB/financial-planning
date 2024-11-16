@@ -33,7 +33,7 @@ Options All -Indexes
         # RewriteCond $1 !^(index\.php|img|bootstrap|images|assets|css|js|robots\.txt|favicon\.ico)
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
-        RewriteRule (.*) public/$1 [L]
+    #    RewriteRule (.*) public/$1 [L]
 	RewriteRule ^(.*)$ ./public/index.php/$1 [QSA,L]
 
 	# Ensure Authorization header is passed along

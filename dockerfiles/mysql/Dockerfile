@@ -1,0 +1,8 @@
+FROM mysql:latest
+
+ENV MYSQL_ROOT_PASSWORD=root
+ENV MYSQL_DATABASE=financial_planning
+ENV MYSQL_USER=financial_planning
+ENV MYSQL_PASSWORD=ab0$SbG89%^mb
+
+EXPOSE 3306

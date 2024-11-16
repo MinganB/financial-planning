@@ -3,7 +3,7 @@ FROM php:8.1.0-apache
 RUN apt-get update \
     && apt-get install -y nano zip unzip git libicu-dev mariadb-server \
     && docker-php-ext-configure intl \
-    && docker-php-ext-install intl \
+    && docker-php-ext-install intl mysqli \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 

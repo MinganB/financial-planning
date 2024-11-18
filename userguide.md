@@ -42,3 +42,6 @@ To create an asset, click 'Net Worth' on the main dashboard, then select 'Add Ne
 
 #### Editing assets and liabilities
 Assets and liabilities can be edited by clicking on their respective cards. Updating the value will log a new entry, while the application retains a record of historical values to track profit or loss over time. You can also delete an asset/liability from the edit modal by clicking 'Delete asset'.
+
+## Account and application settings
+You can access the application settings by clicking 'App Settings' from the main dashboard. In the application settings you can update your password, customise your privacy and sharing settings, and invite other users to your account. Should you ever wish to delete your account (and the associated data) you can choose 'Delete my account' at the bottom of the page.

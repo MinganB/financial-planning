@@ -1,8 +1,8 @@
-# User Guide
+# User guide
 
 Installation and setup guide: [Installation Guide](https://github.com/MinganB/financial-planning/blob/main/README.md)
 
-- [Installation and Setup Guide](#installation-and-setup-guide)
+# Table of contents
 - [Creating an Account](#creating-an-account)
 - [Getting Started](#getting-started)
   - [Creating a Budget](#creating-a-budget)

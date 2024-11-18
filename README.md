@@ -3,6 +3,9 @@
 ## Project overview
 The application will enable users to update their personal details, create and a manage a personal budget, record their assets and liabilities, and view their financial planning summary information. An API (Application Programming Interface) will allow third-party applications used by financial planners to view and edit client data.
 
+## User guide
+The application user guide is available here: ...
+
 ## Docker installation (Recommended)
 
 - This guide provides step-by-step instructions for setting up the app using Docker.

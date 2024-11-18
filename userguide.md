@@ -2,6 +2,17 @@
 
 Installation and setup guide: [Installation Guide](https://github.com/MinganB/financial-planning/blob/main/README.md)
 
+- [Installation and Setup Guide](#installation-and-setup-guide)
+- [Creating an Account](#creating-an-account)
+- [Getting Started](#getting-started)
+  - [Creating a Budget](#creating-a-budget)
+    - [Expense Categories](#expense-categories)
+    - [Expenses](#expenses)
+  - [Net Worth Tracking](#net-worth-tracking)
+    - [Creating an Asset or Liability](#creating-an-asset-or-liability)
+    - [Editing Assets and Liabilities](#editing-assets-and-liabilities)
+- [Account and Application Settings](#account-and-application-settings)
+
 ## Creating an account
 
 1. Navigate to http://app.financial-planning.co.za

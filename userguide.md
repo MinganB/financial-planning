@@ -24,4 +24,5 @@ To add an expense category, click the 'View Budget' button on the main dashboard
 #### Expenses
 Actual expenses can be logged once a category has been created. The expense can be logged from the main dashboard by clicking 'Log Expense' or from the budget view by clicking 'Add New +' under the expenses tab.
 
-Existing expenses can be deleted by clicking 'Delete' in the expense row: ![Uploading Screenshot 2024-11-18 at 17.17.58.png…]()
+Existing expenses can be deleted by clicking 'Delete' in the expense row:
+<img width="1307" alt="Screenshot 2024-11-18 at 17 17 58" src="https://github.com/user-attachments/assets/d869d6fd-8bb4-4448-ad3d-1b5817375d33">

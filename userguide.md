@@ -31,4 +31,14 @@ Actual expenses can be logged once a category has been created. The expense can 
 Existing expenses can be deleted by clicking 'Delete' in the expense row:
 <img width="1307" alt="Screenshot 2024-11-18 at 17 17 58" src="https://github.com/user-attachments/assets/d869d6fd-8bb4-4448-ad3d-1b5817375d33">
 
+### Net worth tracking
 
+Creating assets and liabilities enables you to track the growth of your net worth over time. You can log assets (e.g., your house, car, or investments) and liabilities (e.g., loans, credit cards, or other debts). Any unallocated monthly spending will be added to your net worth growth.
+
+#### Creating an asset or liability
+To create an asset, click 'Net Worth' on the main dashboard, then select 'Add New +' under the 'What I Have' tab. Similarly, to create a liability (debt), click 'Add New +' under the 'What I Owe' tab.
+
+<img width="1313" alt="Screenshot 2024-11-18 at 17 24 41" src="https://github.com/user-attachments/assets/37b91f95-4467-4cf2-818c-2302e9d07378">
+
+#### Editing assets and liabilities
+Assets and liabilities can be edited by clicking on their respective cards. Updating the value will log a new entry, while the application retains a record of historical values to track profit or loss over time. You can also delete an asset/liability from the edit modal by clicking 'Delete asset'.

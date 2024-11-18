@@ -1,6 +1,8 @@
 # User guide
 
-Installation and setup guide: [Installation Guide](https://github.com/MinganB/financial-planning/blob/main/README.md)
+Welcome to the Financial Planning App! This guide will help you get started, navigate key features, and manage your account.
+
+You can find the application installation and setup guide here: [Installation Guide](https://github.com/MinganB/financial-planning/blob/main/README.md)
 
 # Table of contents
 - [Creating an Account](#creating-an-account)

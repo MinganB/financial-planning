@@ -11,4 +11,9 @@ class APIController extends BaseController
     {
         $this->apiModel = model(APIModel::class);
     }
+
+    /**
+     * This controller can be used for future API routes / development.
+     * Token-based authentication can be implemented here.
+     */
 }
